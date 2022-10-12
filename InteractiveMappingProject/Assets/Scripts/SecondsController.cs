@@ -1,13 +1,14 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SecondsController : MonoBehaviour
 {
-    public float TimeMultiplier;
-    public float startHour;
+    public float CurrentHour;
+    private float oldHour;
     
     public Light SunLight;
-    public Light MoonLight;
     public float SunriseHour;
     public float SunsetHour;
     
@@ -19,11 +20,22 @@ public class SecondsController : MonoBehaviour
     public Color nightAmbientLight;
     public AnimationCurve lightChangeCurve;
     public float maxSunLightIntensity;
-    public float maxMoonLightIntensity;
-    
+
+    public bool TimeDebug = false;
+
+    public List<Color> colorHistory;
+    public int currentDay = 0;
+    private bool isNewDay = false;
+
+    private void Awake()
+    {
+        colorHistory = new List<Color>();
+        oldHour = CurrentHour;
+    }
+
     private void Start()
     {
-        currentTime = DateTime.Now.Date + TimeSpan.FromHours(startHour);
+        currentTime = DateTime.Now.Date + TimeSpan.FromHours(CurrentHour);
         
         sunriseTime = TimeSpan.FromHours(SunriseHour);
         sunsetTime = TimeSpan.FromHours(SunsetHour);
@@ -31,19 +43,31 @@ public class SecondsController : MonoBehaviour
 
     private void Update()
     {
-        currentTime = currentTime.AddSeconds(Time.deltaTime * TimeMultiplier);
-        Debug.Log(currentTime.ToString("HH:mm"));
+        if (TimeDebug)
+            CurrentHour += Time.deltaTime;
         
-        RotateSun();
+        UpdateController(CurrentHour - oldHour);
+        oldHour = CurrentHour;
+    }
+
+    public void UpdateController(float value)
+    {
+        
+        currentTime = DateTime.Now.Date + TimeSpan.FromHours(CurrentHour); // CurrentHour += value
+        
+        RotateSun( value < 0);
         UpdateLights();
     }
 
-    private void RotateSun()
+    private void RotateSun(bool clockwise)
     {
         float SunRotation;
 
         if (currentTime.TimeOfDay > sunriseTime && currentTime.TimeOfDay < sunsetTime)
         {
+            if(isNewDay)
+                if (clockwise) PreviousDay(); else NextDay();
+            
             TimeSpan sunriseToSunsetDuration = CalculateTimeDifference(sunriseTime, sunsetTime);
             TimeSpan timeSinceSunrise = CalculateTimeDifference(sunriseTime, currentTime.TimeOfDay);
 
@@ -52,6 +76,7 @@ public class SecondsController : MonoBehaviour
         }
         else
         {
+            isNewDay = true;
             TimeSpan sunsetToSunriseDuration = CalculateTimeDifference(sunsetTime, sunriseTime);
             TimeSpan timeSinceSunset = CalculateTimeDifference(sunsetTime, currentTime.TimeOfDay);
 
@@ -66,10 +91,8 @@ public class SecondsController : MonoBehaviour
     {
         float dot = Vector3.Dot(SunLight.transform.forward, Vector3.down);
 
-        SunLight.intensity = Mathf.Lerp(0, maxSunLightIntensity, lightChangeCurve.Evaluate(dot));
-        MoonLight.intensity = Mathf.Lerp(maxMoonLightIntensity, 0, lightChangeCurve.Evaluate(dot));
-
-        RenderSettings.ambientLight = Color.Lerp(nightAmbientLight, dayAmbientLight, lightChangeCurve.Evaluate(dot));
+        SunLight.intensity = Mathf.Lerp(0, maxSunLightIntensity, lightChangeCurve.Evaluate(dot)); 
+        RenderSettings.ambientSkyColor = Color.Lerp(nightAmbientLight, dayAmbientLight, lightChangeCurve.Evaluate(dot)); 
     }
 
     private TimeSpan CalculateTimeDifference(TimeSpan fromTime, TimeSpan toTime)
@@ -80,5 +103,47 @@ public class SecondsController : MonoBehaviour
             diff += TimeSpan.FromHours(24);
 
         return diff;
+    }
+
+    private void NextDay()
+    {
+        if (currentDay < 10)
+        {
+            if(currentDay < colorHistory.Count - 1)
+                SunLight.color = colorHistory[currentDay + 1];
+            else
+            {
+                SunLight.color = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f),Random.Range(0f, 1f));
+                colorHistory.Add(SunLight.color);
+            }
+            currentDay++;
+        }
+        else
+        {
+            colorHistory.RemoveAt(0);
+            SunLight.color = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f),Random.Range(0f, 1f));
+            colorHistory.Add(SunLight.color);
+        }
+        
+        isNewDay = false;
+    }
+
+    private void PreviousDay()
+    {
+        if (currentDay > 0)
+        {
+            SunLight.color = colorHistory[currentDay - 1];
+            currentDay--;
+        }
+        else
+        {
+            if(colorHistory.Count > 10)
+                colorHistory.RemoveAt(colorHistory.Count-1);
+            
+            SunLight.color = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f),Random.Range(0f, 1f));
+            colorHistory.Insert(0, SunLight.color);
+        }
+        
+        isNewDay = false;
     }
 }
