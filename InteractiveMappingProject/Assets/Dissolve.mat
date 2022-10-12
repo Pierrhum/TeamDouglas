@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dissolve
-  m_Shader: {fileID: -6465566751694194690, guid: ae0251f3846b75c4da3ddb5add39a3f3, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: db986c70cf2d4654b8e3ec7778294b6a, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -24,8 +24,13 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
+    - _DissolveFactor: 0.3
+    - _EdgeSize: 0.01
+    - _NoiseScale: 54.28
+    - _NoiseStrength: 1
     m_Colors:
-    - _Albedo: {r: 0, g: 0, b: 0, a: 1}
+    - _Albedo: {r: 0.6666667, g: 0.03755202, b: 0, a: 1}
+    - _EdgeColor: {r: 33.821632, g: 12.549203, b: 0, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &531835862935466517
 MonoBehaviour:
