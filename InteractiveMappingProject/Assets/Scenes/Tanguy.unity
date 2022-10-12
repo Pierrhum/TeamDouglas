@@ -240,37 +240,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5316ec2e60d2d464e8b505ea0bb59fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensorID: 0
+  encoderID: 0
   turns: 4
-  test:
-    serializedVersion: 2
-    key0: {r: 0, g: 0, b: 0, a: 1}
-    key1: {r: 1, g: 0.759434, b: 0.9342565, a: 1}
-    key2: {r: 0.2688679, g: 0.8992925, b: 1, a: 0}
-    key3: {r: 0.990566, g: 0.9646024, b: 0.76161444, a: 0}
-    key4: {r: 1, g: 0.6722032, b: 0.5424528, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 15227
-    ctime2: 30069
-    ctime3: 46453
-    ctime4: 52814
-    ctime5: 65535
-    ctime6: 65535
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_NumColorKeys: 6
-    m_NumAlphaKeys: 2
+  value: 0
+  OnEncoderRotate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1278270371
 BoxCollider:
   m_ObjectHideFlags: 0

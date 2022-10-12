@@ -50,14 +50,13 @@ void updateEncoder(encoder_t& encoder, int encoderID) {
     encoder.dirCW = encoder.stateA != encoder.stateB;
     if (encoder.dirCW) {
       encoder.pos ++;
-      Serial.print(1);
-      Serial.print("\t");
     }
     else {
       encoder.pos --;
-      Serial.print(-1);
-      Serial.print("\t");
     }
+    Serial.print(encoder.dirCW);
+    Serial.print("\t");  
+
     Serial.print(encoder.pos);
     Serial.println();
     
