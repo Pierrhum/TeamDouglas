@@ -23,15 +23,15 @@ public class RotatorSwitchValues : MonoBehaviour
     void OnSerialValues(string[] values){
         int id = int.Parse(values[0]);
         if (id == encoderID) {
-            bool clockwise = bool.Parse(values[1]);
+            int direction = int.Parse(values[1]);
             int position = int.Parse(values[2]);
 
-            if (OnEncoderRotate != null) {
-                OnEncoderRotate.Invoke(clockwise, position);
-            }
             value = Mathf.Repeat((float)position / (STEPS_BY_TURN * turns), 1f);
+            if (OnEncoderRotate != null) {
+                OnEncoderRotate.Invoke(direction > 0, value);
+            }
 
-            Debug.Log(string.Format("{0}, {1}", clockwise, position));
+            //Debug.Log(string.Format("{0}, {1}", direction > 0, value));
         }
     }
 }
