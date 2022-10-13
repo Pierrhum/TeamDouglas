@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\bourg\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\bourg\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_InteractiveMappingProject.-1212042056.00" t="ExcludeRecursive" />
+    <e p="F:\ProjetsUnity\ENJMIN-M1\TeamDouglas\InteractiveMappingProject" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Deform" t="Include">
+          <e p="Code" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Core" t="Include">
+                <e p="DeformableManagerEditor.cs" t="Include" />
+              </e>
+              <e p="CreatorWindow.cs" t="Include" />
+              <e p="CreditsWindow.cs" t="Include" />
+              <e p="Data" t="Include">
+                <e p="ReorderableComponentElementList.cs" t="Include" />
+              </e>
+              <e p="DeformBuildPostProcessor.cs" t="Include" />
+              <e p="DeformEditor.asmdef" t="Include" />
+              <e p="DeformEditorGUIUtility.cs" t="Include" />
+              <e p="DeformEditorResources.cs" t="Include" />
+              <e p="DeformEditorSettings.cs" t="Include" />
+              <e p="DeformEditorSettingsAsset.cs" t="Include" />
+              <e p="DeformEditorSettingsAssetInspector.cs" t="Include" />
+              <e p="DeformHandles.cs" t="Include" />
+              <e p="DeformHandlesUtility.cs" t="Include" />
+              <e p="DeformModelPostProcessor.cs" t="Include" />
+              <e p="DeformUnityObjectSelection.cs" t="Include" />
+              <e p="MenuItemActions.cs" t="Include" />
+              <e p="Mesh" t="Include">
+                <e p="Data" t="Include">
+                  <e p="VertexCacheCreator.cs" t="Include" />
+                  <e p="VertexCacheEditor.cs" t="Include" />
+                </e>
+                <e p="DeformableEditor.cs" t="Include" />
+                <e p="DeformerEditor.cs" t="Include" />
+                <e p="Deformers" t="Include">
+                  <e p="BendDeformerEditor.cs" t="Include" />
+                  <e p="BlendDeformerEditor.cs" t="Include" />
+                  <e p="BoundedBendDeformerEditor.cs" t="Include" />
+                  <e p="BulgeDeformerEditor.cs" t="Include" />
+                  <e p="CubifyDeformerEditor.cs" t="Include" />
+                  <e p="CurveDisplaceDeformerEditor.cs" t="Include" />
+                  <e p="CurveScaleDeformerEditor.cs" t="Include" />
+                  <e p="CylindrifyDeformerEditor.cs" t="Include" />
+                  <e p="InflateDeformerEditor.cs" t="Include" />
+                  <e p="LatheDisplaceDeformerEditor.cs" t="Include" />
+                  <e p="LatticeDeformerEditor.cs" t="Include" />
+                  <e p="MagnetDeformerEditor.cs" t="Include" />
+                  <e p="Masking" t="Include">
+                    <e p="Masks" t="Include">
+                      <e p="BoxMaskEditor.cs" t="Include" />
+                      <e p="SphereMaskEditor.cs" t="Include" />
+                      <e p="VertexColorMaskEditor.cs" t="Include" />
+                      <e p="VerticalGradientMaskEditor.cs" t="Include" />
+                    </e>
+                  </e>
+                  <e p="MeltDeformerEditor.cs" t="Include" />
+                  <e p="Noise" t="Include">
+                    <e p="CellularNoiseDeformerEditor.cs" t="Include" />
+                    <e p="NoiseDeformerEditor.cs" t="Include" />
+                    <e p="PerlinNoiseDeformerEditor.cs" t="Include" />
+                    <e p="SimplexNoiseDeformerEditor.cs" t="Include" />
+                  </e>
+                  <e p="RadialCurveDeformerEditor.cs" t="Include" />
+                  <e p="RadialSkewDeformerEditor.cs" t="Include" />
+                  <e p="RippleDeformerEditor.cs" t="Include" />
+                  <e p="ScaleDeformerEditor.cs" t="Include" />
+                  <e p="SineDeformerEditor.cs" t="Include" />
+                  <e p="SkewDeformerEditor.cs" t="Include" />
+                  <e p="SpherifyDeformerEditor.cs" t="Include" />
+                  <e p="SquashAndStretchDeformerEditor.cs" t="Include" />
+                  <e p="StarDeformerEditor.cs" t="Include" />
+                  <e p="TaperDeformerEditor.cs" t="Include" />
+                  <e p="TextureDisplaceDeformerEditor.cs" t="Include" />
+                  <e p="TransformDeformerEditor.cs" t="Include" />
+                  <e p="TransformOffsetDeformerEditor.cs" t="Include" />
+                  <e p="TwirlDeformerEditor.cs" t="Include" />
+                  <e p="TwistDeformerEditor.cs" t="Include" />
+                  <e p="Utility" t="Include">
+                    <e p="AutoGroupDeformerEditor.cs" t="Include" />
+                    <e p="GroupDeformerEditor.cs" t="Include" />
+                    <e p="RepeaterDeformerEditor.cs" t="Include" />
+                  </e>
+                  <e p="UVOffsetDeformerEditor.cs" t="Include" />
+                  <e p="UVScaleDeformerEditor.cs" t="Include" />
+                  <e p="WaveDeformerEditor.cs" t="Include" />
+                </e>
+                <e p="ElasticDeformableEditor.cs" t="Include" />
+              </e>
+              <e p="PropertyDrawers" t="Include">
+                <e p="DeformerElementPropertyDrawer.cs" t="Include" />
+                <e p="DisplayNameDrawer.cs" t="Include" />
+              </e>
+            </e>
+            <e p="External" t="Include">
+              <e p="Common" t="Include">
+                <e p="Beans.Unity.Collections" t="Include">
+                  <e p="Beans.Unity.Collections.asmdef" t="Include" />
+                  <e p="NativeArrayx.cs" t="Include" />
+                </e>
+                <e p="Beans.Unity.Editor" t="Include">
+                  <e p="Editor" t="Include">
+                    <e p="Beans.Unity.Editor.asmdef" t="Include" />
+                    <e p="EditorChangeScope.cs" t="Include" />
+                    <e p="EditorGUILayoutx.cs" t="Include" />
+                    <e p="EditorGUIUtilityx.cs" t="Include" />
+                    <e p="EditorGUIx.cs" t="Include" />
+                    <e p="Editorx.cs" t="Include" />
+                    <e p="Handles" t="Include">
+                      <e p="VerticalBoundsHandle.cs" t="Include" />
+                    </e>
+                  </e>
+                </e>
+                <e p="Beans.Unity.Mathematics" t="Include">
+                  <e p="Beans.Unity.Mathematics.asmdef" t="Include" />
+                  <e p="bounds.cs" t="Include" />
+                  <e p="mathx.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="Core" t="Include">
+                <e p="DeformableManager.cs" t="Include" />
+                <e p="DeformerAttribute.cs" t="Include" />
+                <e p="Interfaces" t="Include">
+                  <e p="IData.cs" t="Include" />
+                  <e p="IDeformable.cs" t="Include" />
+                  <e p="IDeformer.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Data" t="Include">
+                <e p="CollapsibleSection.cs" t="Include" />
+                <e p="DisplayNameAttribute.cs" t="Include" />
+                <e p="Interfaces" t="Include">
+                  <e p="IComponentElement.cs" t="Include" />
+                </e>
+                <e p="NativeCurve.cs" t="Include" />
+                <e p="NativeTexture2D.cs" t="Include" />
+              </e>
+              <e p="Deform.asmdef" t="Include" />
+              <e p="Enums" t="Include">
+                <e p="Axis.cs" t="Include" />
+                <e p="BoundsMode.cs" t="Include" />
+                <e p="BoundsRecalculation.cs" t="Include" />
+                <e p="ColliderRecalculation.cs" t="Include" />
+                <e p="CullingMode.cs" t="Include" />
+                <e p="NoiseMode.cs" t="Include" />
+                <e p="NormalsRecalculation.cs" t="Include" />
+                <e p="TextureSampleSpace.cs" t="Include" />
+                <e p="UpdateMode.cs" t="Include" />
+              </e>
+              <e p="Mesh" t="Include">
+                <e p="Data" t="Include">
+                  <e p="DeformerElement.cs" t="Include" />
+                  <e p="Enums" t="Include">
+                    <e p="ColorChannel.cs" t="Include" />
+                    <e p="DataFlags.cs" t="Include" />
+                    <e p="UpdateFrequency.cs" t="Include" />
+                  </e>
+                  <e p="ManagedMeshData.cs" t="Include" />
+                  <e p="MeshData.cs" t="Include" />
+                  <e p="MeshTarget.cs" t="Include" />
+                  <e p="NativeMeshData.cs" t="Include" />
+                  <e p="VertexCache.cs" t="Include" />
+                </e>
+                <e p="Deformable.cs" t="Include" />
+                <e p="Deformer.cs" t="Include" />
+                <e p="Deformers" t="Include">
+                  <e p="BendDeformer.cs" t="Include" />
+                  <e p="BlendDeformer.cs" t="Include" />
+                  <e p="BoundedBendDeformer.cs" t="Include" />
+                  <e p="BulgeDeformer.cs" t="Include" />
+                  <e p="CubifyDeformer.cs" t="Include" />
+                  <e p="CurveDisplaceDeformer.cs" t="Include" />
+                  <e p="CurveScaleDeformer.cs" t="Include" />
+                  <e p="CylindrifyDeformer.cs" t="Include" />
+                  <e p="InflateDeformer.cs" t="Include" />
+                  <e p="Interfaces" t="Include">
+                    <e p="IFactor.cs" t="Include" />
+                  </e>
+                  <e p="LatheDisplaceDeformer.cs" t="Include" />
+                  <e p="LatticeDeformer.cs" t="Include" />
+                  <e p="MagnetDeformer.cs" t="Include" />
+                  <e p="Masking" t="Include">
+                    <e p="Masks" t="Include">
+                      <e p="BoxMask.cs" t="Include" />
+                      <e p="SphereMask.cs" t="Include" />
+                      <e p="VertexColorMask.cs" t="Include" />
+                      <e p="VerticalGradientMask.cs" t="Include" />
+                    </e>
+                    <e p="MaskState.cs" t="Include" />
+                  </e>
+                  <e p="MeltDeformer.cs" t="Include" />
+                  <e p="Noise" t="Include">
+                    <e p="CellularNoiseDeformer.cs" t="Include" />
+                    <e p="NoiseDeformer.cs" t="Include" />
+                    <e p="PerlinNoiseDeformer.cs" t="Include" />
+                    <e p="SimplexNoiseDeformer.cs" t="Include" />
+                  </e>
+                  <e p="RadialCurveDeformer.cs" t="Include" />
+                  <e p="RadialSkewDeformer.cs" t="Include" />
+                  <e p="RippleDeformer.cs" t="Include" />
+                  <e p="ScaleDeformer.cs" t="Include" />
+                  <e p="SineDeformer.cs" t="Include" />
+                  <e p="SkewDeformer.cs" t="Include" />
+                  <e p="SpherifyDeformer.cs" t="Include" />
+                  <e p="SquashAndStretchDeformer.cs" t="Include" />
+                  <e p="StarDeformer.cs" t="Include" />
+                  <e p="TaperDeformer.cs" t="Include" />
+                  <e p="TextureDisplaceDeformer.cs" t="Include" />
+                  <e p="TransformDeformer.cs" t="Include" />
+                  <e p="TransformOffsetDeformer.cs" t="Include" />
+                  <e p="TwirlDeformer.cs" t="Include" />
+                  <e p="TwistDeformer.cs" t="Include" />
+                  <e p="Utility" t="Include">
+                    <e p="AutoGroupDeformer.cs" t="Include" />
+                    <e p="GroupDeformer.cs" t="Include" />
+                    <e p="RecalculateBoundsDeformer.cs" t="Include" />
+                    <e p="RecalculateNormalsDeformer.cs" t="Include" />
+                    <e p="RepeaterDeformer.cs" t="Include" />
+                  </e>
+                  <e p="UVOffsetDeformer.cs" t="Include" />
+                  <e p="UVScaleDeformer.cs" t="Include" />
+                  <e p="WaveDeformer.cs" t="Include" />
+                </e>
+                <e p="ElasticDeformable.cs" t="Include" />
+                <e p="IO" t="Include">
+                  <e p="ObjExporter.cs" t="Include" />
+                </e>
+                <e p="Utility" t="Include">
+                  <e p="DataUtils.cs" t="Include" />
+                  <e p="DeformerUtils.cs" t="Include" />
+                  <e p="Jobs" t="Include">
+                    <e p="AddFloat3ToFloat3sJob.cs" t="Include" />
+                    <e p="AddTriangleNormalToNormalsJob.cs" t="Include" />
+                    <e p="CopyFloat3sJob.cs" t="Include" />
+                    <e p="ElasticPointsUpdateJob.cs" t="Include" />
+                    <e p="NormalizeNormalsJob.cs" t="Include" />
+                    <e p="RecalculateBoundsJob.cs" t="Include" />
+                    <e p="ResetNormalsJob.cs" t="Include" />
+                    <e p="TransformPointsFromJob.cs" t="Include" />
+                    <e p="TransformPointsJob.cs" t="Include" />
+                  </e>
+                  <e p="MeshUtils.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="EditorResources" t="Include">
+            <e p="Textures" t="Include">
+              <e p="External" t="Include">
+                <e p="MaterialDesign" t="Include">
+                  <e p="LICENSE.txt" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="LICENSE.txt" t="Include" />
+          <e p="package.json" t="Include" />
+          <e p="README.txt" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="BillingMode.json" t="Include" />
+        </e>
+        <e p="Scritps" t="Include">
+          <e p="GameManager.cs" t="Include" />
+        </e>
+        <e p="Textures" t="Include">
+          <e p="NoiseText" t="Include">
+            <e p="Luos_FreeGiveAway" t="Include">
+              <e p="PLZ_Read_Me.txt" t="Include" />
+              <e p="Settings_And_Examples" t="Include">
+                <e p="Copy_Paste_MaterialSetup.txt" t="Include" />
+              </e>
+            </e>
+            <e p="Luos_Noise_V2" t="Include">
+              <e p="Noise_GrayScale" t="Include">
+                <e p="Personal_Protip.txt" t="Include" />
+              </e>
+              <e p="Noise_Normal" t="Include">
+                <e p="Personal_Protip.txt" t="Include" />
+              </e>
+              <e p="PewPewPew!.txt" t="Include" />
+              <e p="Please_Do_Read_Me!.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Beans.Unity.Collections.csproj" t="IncludeRecursive" />
+      <e p="Beans.Unity.Editor.csproj" t="IncludeRecursive" />
+      <e p="Beans.Unity.Mathematics.csproj" t="IncludeRecursive" />
+      <e p="Deform.csproj" t="IncludeRecursive" />
+      <e p="DeformEditor.csproj" t="IncludeRecursive" />
+      <e p="InteractiveMappingProject.sln" t="IncludeFlat" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\Bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
