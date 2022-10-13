@@ -20,12 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdf3522e-856d-4b58-afaa-8f7780c8bc4a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.InteractiveMappingProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InteractiveMappingProject/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.InteractiveMappingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InteractiveMappingProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/m_sky.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/m_sky.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Meshes/Horloge.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Meshes/Horloge.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Shaders/shad_skybox.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Shaders/shad_skybox.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Skybox/Cubemap.cubemap" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/Skybox/Cubemap.cubemap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scn_Art.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scn_Art.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,13 +36,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scritps/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scritps/GameManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Art/Scritps/TestGradientController.cs" />
       </list>
     </option>
   </component>
@@ -92,6 +91,8 @@
       <option name="presentableId" value="Default" />
       <updated>1665563415019</updated>
       <workItem from="1665563427584" duration="1222000" />
+      <workItem from="1665661093708" duration="213000" />
+      <workItem from="1665661321269" duration="888000" />
     </task>
     <servers />
   </component>
@@ -110,6 +111,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

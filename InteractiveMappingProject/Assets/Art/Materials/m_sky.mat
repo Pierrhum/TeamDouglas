@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
@@ -36,6 +37,14 @@ Material:
         m_Texture: {fileID: 8900000, guid: 7b73842b6d5b1504eb0cc470984e53f7, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Map:
+        m_Texture: {fileID: 2800000, guid: 97223eab9dd6b8e4f998b9f45c36020f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: 23db4d4704b7ced46b742027886c0c81, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Sky:
         m_Texture: {fileID: 8900000, guid: 7b73842b6d5b1504eb0cc470984e53f7, type: 2}
         m_Scale: {x: 1, y: 1}
@@ -54,7 +63,26 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Blend: 1
+    - _InputVal: 9.24
+    - _MapStrength: 0.382
+    - _NoiseMaskHeight: 2
+    - _NoiseSpeed: 0.05
+    - _NoiseStrength: 0.1
+    - _NoiseTiling: 0.64
     - _QueueControl: 0
     - _QueueOffset: 0
-    m_Colors: []
+    - _SunAffectOnSky: 0.15
+    - _SunBlend: 0.001
+    - _SunShrink: 0.998
+    - _SunSize: 0.96
+    - _Test: 4
+    m_Colors:
+    - _Ground: {r: 0, g: 0, b: 0, a: 0}
+    - _Horizon: {r: 0, g: 0, b: 0, a: 0}
+    - _NightColor: {r: 0.22207977, g: 0.19184762, b: 0.3207547, a: 0}
+    - _SunColor: {r: 0.8679245, g: 0.80268705, b: 0.7074404, a: 0}
+    - _WorldSpaceLightDir: {r: 0, g: 0, b: 0, a: 0}
+    - _WorldSpaceLightDir0: {r: 0, g: 0, b: 0, a: 0}
+    - _sky: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

@@ -6,6 +6,14 @@
     <e p="F:\ProjetsUnity\ENJMIN-M1\TeamDouglas\InteractiveMappingProject" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Art" t="Include">
+          <e p="Resources" t="Include">
+            <e p="BillingMode.json" t="Include" />
+          </e>
+          <e p="Scritps" t="Include">
+            <e p="GameManager.cs" t="Include" />
+          </e>
+        </e>
         <e p="Deform" t="Include">
           <e p="Code" t="Include">
             <e p="Editor" t="Include">
@@ -264,29 +272,6 @@
         </e>
         <e p="Resources" t="Include">
           <e p="BillingMode.json" t="Include" />
-        </e>
-        <e p="Scritps" t="Include">
-          <e p="GameManager.cs" t="Include" />
-        </e>
-        <e p="Textures" t="Include">
-          <e p="NoiseText" t="Include">
-            <e p="Luos_FreeGiveAway" t="Include">
-              <e p="PLZ_Read_Me.txt" t="Include" />
-              <e p="Settings_And_Examples" t="Include">
-                <e p="Copy_Paste_MaterialSetup.txt" t="Include" />
-              </e>
-            </e>
-            <e p="Luos_Noise_V2" t="Include">
-              <e p="Noise_GrayScale" t="Include">
-                <e p="Personal_Protip.txt" t="Include" />
-              </e>
-              <e p="Noise_Normal" t="Include">
-                <e p="Personal_Protip.txt" t="Include" />
-              </e>
-              <e p="PewPewPew!.txt" t="Include" />
-              <e p="Please_Do_Read_Me!.txt" t="Include" />
-            </e>
-          </e>
         </e>
       </e>
       <e p="Beans.Unity.Collections.csproj" t="IncludeRecursive" />
