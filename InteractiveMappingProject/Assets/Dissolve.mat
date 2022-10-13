@@ -24,7 +24,7 @@ Material:
     m_Floats:
     - _BUILTIN_QueueControl: 0
     - _BUILTIN_QueueOffset: 0
-    - _DissolveFactor: 0.25
+    - _DissolveFactor: 0.3
     - _EdgeSize: 0.01
     - _NoiseScale: 54.28
     - _NoiseStrength: 1
