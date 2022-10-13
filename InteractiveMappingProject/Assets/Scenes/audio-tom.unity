@@ -170,7 +170,7 @@ MonoBehaviour:
   - Name: Buildings
     Value: 1
   - Name: Geometry
-    Value: 0
+    Value: 1
   - Name: Gravity
     Value: 0.5
   - Name: Trees
