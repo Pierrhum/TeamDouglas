@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -424,6 +424,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1365707284}
   - component: {fileID: 1365707285}
+  - component: {fileID: 1365707286}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -501,6 +502,18 @@ MonoBehaviour:
   TimeDebug: 0
   colorHistory: []
   currentDay: 0
+--- !u!114 &1365707286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365707283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47445b17405a3eb4e9f6bebfe569e54f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1755282895
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,11 +736,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   encoderID: 0
-  turns: 4
+  turns: 0.041666668
   encoderValue: 0
+  stepValue: 0
   OnEncoderRotate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1365707283}
+        m_TargetAssemblyTypeName: TestUsingValues, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnEncoderStep:
     m_PersistentCalls:
       m_Calls:
@@ -759,7 +785,7 @@ MonoBehaviour:
   SkipFirstLine: 0
   NotifyLines: 0
   RememberLines: 0
-  NotifyValues: 0
+  NotifyValues: 1
   ValuesSeparator: 9
 --- !u!4 &1852986963
 Transform:

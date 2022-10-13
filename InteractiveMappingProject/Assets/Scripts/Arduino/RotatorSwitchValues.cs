@@ -19,6 +19,8 @@ public class RotatorSwitchValues : MonoBehaviour
     [Range(0,1)]
     public float encoderValue = 0f;
     private float lastEncoderValue = 0f;
+    [SerializeField]
+    public float stepValue = 0f;
 
     public UnityEvent<bool, float> OnEncoderRotate = new UnityEvent<bool, float>();
     public UnityEvent<float> OnEncoderStep = new UnityEvent<float>();
@@ -26,9 +28,11 @@ public class RotatorSwitchValues : MonoBehaviour
     private void Update() {
         if (encoderValue != lastEncoderValue) {
             if (OnEncoderRotate != null) OnEncoderRotate.Invoke(encoderValue > lastEncoderValue, encoderValue);
-            if (OnEncoderStep != null) OnEncoderStep.Invoke(encoderValue - lastEncoderValue);
-
             lastEncoderValue = encoderValue;
+        }
+        if (stepValue != 0f) {
+            if (OnEncoderStep != null) OnEncoderStep.Invoke(stepValue);
+            stepValue = 0f;
         }
     }
     
@@ -37,7 +41,8 @@ public class RotatorSwitchValues : MonoBehaviour
         if (id == encoderID) {
             int direction = int.Parse(values[1]);
             int position = int.Parse(values[2]);
-
+            
+            stepValue = (float)direction / (STEPS_BY_TURN * turns);
             encoderValue = Mathf.Repeat((float)position / (STEPS_BY_TURN * turns), 1f);
 
             //Debug.Log(string.Format("{0}, {1}", direction > 0, value));

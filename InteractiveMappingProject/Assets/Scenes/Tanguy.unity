@@ -243,21 +243,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   encoderID: 0
   turns: 4
+  encoderValue: 0
   OnEncoderRotate:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1278270376}
-        m_TargetAssemblyTypeName: TestUsingValues, Assembly-CSharp
-        m_MethodName: OnEncoderRotate
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  OnEncoderStep:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1278270371
 BoxCollider:
   m_ObjectHideFlags: 0

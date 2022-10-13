@@ -52,8 +52,7 @@ public class SecondsController : MonoBehaviour
 
     public void UpdateController(float value)
     {
-        
-        currentTime = DateTime.Now.Date + TimeSpan.FromHours(CurrentHour); // CurrentHour += value
+        currentTime = DateTime.Now.Date + TimeSpan.FromHours(CurrentHour += value); // CurrentHour += value
         
         RotateSun( value < 0);
         UpdateLights();
