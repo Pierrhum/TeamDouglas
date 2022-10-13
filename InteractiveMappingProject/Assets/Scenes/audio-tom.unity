@@ -155,18 +155,26 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 179959701
-      Data2: 1278200811
-      Data3: -2055439708
-      Data4: 1255590587
-    Path: event:/Plop
+      Data1: 1640139687
+      Data2: 1202541479
+      Data3: 1917437588
+      Data4: 1994666558
+    Path: event:/Ambiance
   Event: 
   PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
-  Params: []
+  Params:
+  - Name: Buildings
+    Value: 1
+  - Name: Geometry
+    Value: 0
+  - Name: Gravity
+    Value: 0.5
+  - Name: Trees
+    Value: 1
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
