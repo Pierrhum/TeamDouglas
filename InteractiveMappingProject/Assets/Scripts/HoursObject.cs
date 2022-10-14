@@ -20,8 +20,6 @@ public class HoursObject : MonoBehaviour
     private float progress = 0f;
     private float targetProgress = 0f;
     private float sinProgress = 0f;
-
-    private bool started = false;
     
     private void Awake() {
         Vector3 pos = transform.position;
@@ -48,23 +46,12 @@ public class HoursObject : MonoBehaviour
         progress = Mathf.Lerp(progress, targetProgress, 0.2f);
         sinProgress = Mathf.Sin(progress);
 
-        transform.position = startPosition + Vector3.up * floatHeight * sinProgress;
+        transform.position = startPosition + Vector3.up * floatHeight * Mathf.Max(sinProgress, -0.5f);
         body.angularVelocity = startAngularVelocity * Mathf.Max(sinProgress, 0f);
         deformer.Factor = Mathf.Max(1f - sinProgress * 10f, 0f);
-
-        if (sinProgress < -0.5f) {
-            Destroy(gameObject);
-        }
     }
 
     public void UpdateObject(float value) {
-        if (!started) {
-            if (value < 0) {
-                progress = Mathf.PI;
-                targetProgress = progress;
-            }
-            started = true;
-        }
         targetProgress += value;
         
     }
