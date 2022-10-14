@@ -32,7 +32,7 @@ public class HoursController : MonoBehaviour
             }
         }
         
-        bufferSFX = Mathf.Max(bufferSFX + Mathf.Abs(value) * 0.5f, 0f);
+        bufferSFX = Mathf.Max(bufferSFX + Mathf.Abs(value) * 10f, 0f);
 
         offset += value;
         terrainOffset = Mathf.Sin(offset);
