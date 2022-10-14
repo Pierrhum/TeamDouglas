@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Type
+{
+    TREE,
+    BUILDING,
+    GEOMETRY
+};
 public class MinutesObject : MonoBehaviour
 {
     private float _SpawnTime;
     private float _LifeTime;
+    private Type _Type;
 
     private float currentValue = 0f;
     private bool isBeingDestroyed = false;
-    public void Setup(float SpawnTime, float LifeTime)
+    public void Setup(float SpawnTime, float LifeTime, Type Type)
     {
         _SpawnTime = SpawnTime;
         _LifeTime = LifeTime;
+        _Type = Type;
 
         StartCoroutine(FadeMaterial(true));
     }
@@ -24,14 +32,20 @@ public class MinutesObject : MonoBehaviour
 
     public IEnumerator FadeMaterial(bool FadeIn)
     {
-        if (GetComponent<Renderer>() != null)
-        {
             if (FadeIn)
             {
                 while (!isBeingDestroyed && currentValue < 1.0f)
                 {
-                    GetComponent<Renderer>().material.SetFloat("_AppearFactor", currentValue);
-                    currentValue += Time.deltaTime * 2;
+                    if(_Type == Type.TREE)
+                        GetComponent<Renderer>().material.SetFloat("_AppearFactor", currentValue);
+                    else if(_Type == Type.BUILDING)
+                        foreach (var renderer in GetComponentsInChildren<Renderer>())
+                        {
+                            renderer.material.SetFloat("_DissolveFactor", 1-currentValue);
+                        }
+                    else if(_Type == Type.GEOMETRY)
+                        GetComponent<Renderer>().material.SetFloat("_DissolveFactor", 1-currentValue);
+                    currentValue += Time.deltaTime;
                     yield return new WaitForSeconds(Time.deltaTime);
                 }
             }
@@ -40,12 +54,20 @@ public class MinutesObject : MonoBehaviour
                 isBeingDestroyed = true;
                 while (currentValue > 0.0f)
                 {
-                    GetComponent<Renderer>().material.SetFloat("_AppearFactor", currentValue);
-                    currentValue -= Time.deltaTime * 2;
+                    if(_Type == Type.TREE)
+                        GetComponent<Renderer>().material.SetFloat("_AppearFactor", currentValue);
+                    else if(_Type == Type.BUILDING)
+                        foreach (var renderer in GetComponentsInChildren<Renderer>())
+                        {
+                            renderer.material.SetFloat("_DissolveFactor", 1-currentValue);
+                        }
+                    else if(_Type == Type.GEOMETRY)
+                        GetComponent<Renderer>().material.SetFloat("_DissolveFactor", 1-currentValue);
+                    
+                    currentValue -= Time.deltaTime;
                     yield return new WaitForSeconds(Time.deltaTime);
                 }
             }
-        }
 
         yield return null;
     }
