@@ -469,7 +469,6 @@ GameObject:
   - component: {fileID: 1026705525}
   - component: {fileID: 1026705527}
   - component: {fileID: 1026705526}
-  - component: {fileID: 1026705522}
   m_Layer: 0
   m_Name: MinutesSpawnerPlane
   m_TagString: Untagged
@@ -477,20 +476,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1026705522
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1026705521}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1026705525
 Transform:
   m_ObjectHideFlags: 0
@@ -499,8 +484,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026705521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 500, y: 0, z: 482.8}
-  m_LocalScale: {x: 10, y: 1, z: 5}
+  m_LocalPosition: {x: 500, y: 0, z: 450.3}
+  m_LocalScale: {x: 20, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -916,7 +901,7 @@ PrefabInstance:
       objectReference: {fileID: 1367358728}
     - target: {fileID: 5027554756711148026, guid: 7997c0052e713e74891db5db7e5684e7, type: 3}
       propertyPath: maxSunLightIntensity
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7997c0052e713e74891db5db7e5684e7, type: 3}
