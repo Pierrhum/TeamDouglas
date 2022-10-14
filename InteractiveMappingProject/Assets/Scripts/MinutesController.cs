@@ -54,6 +54,7 @@ public class MinutesController : MonoBehaviour
     
     public void UpdateController(float value)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Minutes");
         currentTime = DateTime.Now.Date + TimeSpan.FromHours(CurrentHour += value);
 
         // Gestion de changement des phases
@@ -100,7 +101,8 @@ public class MinutesController : MonoBehaviour
         }
 
         if (Geometries.Count < 30)
-            Geometries.Add(SpawnGeometry(GetRandomPointInPlane() + Random.Range(2,50) * Vector3.up));
+            //Geometries.Add(SpawnGeometry(GetRandomPointInPlane() + Random.Range(2,50) * Vector3.up));
+            Geometries.Add(SpawnGeometry(GetRandomPointInPlane() + Vector3.up));
         // Remove Destroyed objects
         Geometries.ForEach(t => {
             if (t.GetComponent<MinutesObject>().ShouldDestroy(CurrentHour))

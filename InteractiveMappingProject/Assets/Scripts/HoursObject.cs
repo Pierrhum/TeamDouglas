@@ -34,7 +34,7 @@ public class HoursObject : MonoBehaviour
         controller = FindObjectOfType<HoursController>();
         controller.controlledObjects.Add(this);
 
-        floatHeight = Random.Range(2f, 10f);
+        floatHeight = Random.Range(10f, 20f);
         startPosition = transform.position;
         startAngularVelocity = Random.onUnitSphere;
 

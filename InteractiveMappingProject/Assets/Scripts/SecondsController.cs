@@ -52,12 +52,12 @@ public class SecondsController : MonoBehaviour
         if (oldHour != CurrentHour){
           UpdateController(CurrentHour - oldHour);
           oldHour = CurrentHour;
-          FMODUnity.RuntimeManager.PlayOneShot("event:/Secondes");
         }
     }
 
     public void UpdateController(float value)
     {
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Secondes");
         currentTime = DateTime.Now.Date + TimeSpan.FromHours(CurrentHour += value); // CurrentHour += value
 
         RotateSun( value < 0);

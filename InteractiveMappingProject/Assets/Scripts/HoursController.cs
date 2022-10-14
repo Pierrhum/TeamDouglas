@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using FMODUnity;
 
 public class HoursController : MonoBehaviour
 {
@@ -28,11 +27,12 @@ public class HoursController : MonoBehaviour
     public void OnEncoderStep(float value){
         foreach (HoursObject obj in controlledObjects) {
             if (obj != null) {
-                obj.UpdateObject(value);
+                obj.UpdateObject(value * 4f);
             }
         }
         
-        bufferSFX = Mathf.Max(bufferSFX + Mathf.Abs(value) * 10f, 0f);
+        bufferSFX = Mathf.Max(bufferSFX + Mathf.Abs(value) * 8f, 0f);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Heures");
 
         offset += value;
         terrainOffset = Mathf.Sin(offset);
