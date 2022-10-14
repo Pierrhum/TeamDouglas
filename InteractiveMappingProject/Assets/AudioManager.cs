@@ -7,9 +7,6 @@ public class AudioManager : MonoBehaviour
 {
 
     public float GravityValue = 0f;
-    public bool Geometry = false;
-    public bool Buildings = false;
-    public bool Trees = false;
     
     private float oldGravityValue;
 
@@ -33,10 +30,6 @@ public class AudioManager : MonoBehaviour
             musicEvent.SetParameter("Gravity", GravityValue);
             oldGravityValue = GravityValue;
         }
-        
-        musicEvent.SetParameter("Geometry", Geometry ? 1.0f : 0.0f);
-        musicEvent.SetParameter("Buildings", Buildings ? 1.0f : 0.0f);
-        musicEvent.SetParameter("Trees", Trees ? 1.0f : 0.0f);
     }
 
     public void PlayMusic(string name, bool ShouldPlay)

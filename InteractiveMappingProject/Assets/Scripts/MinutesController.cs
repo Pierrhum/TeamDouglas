@@ -60,30 +60,11 @@ public class MinutesController : MonoBehaviour
 
         // Gestion de changement des phases
         if (StartPhaseTime + (TreePhase ? TreeDuration : BuildingDuration) < CurrentHour)
+            TogglePhase();
+        else if (CurrentHour < StartPhaseTime)
         {
-            // On clear les anciennes listes
-            if (TreePhase)
-            {
-                Trees.ForEach(t => StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>())));
-                Trees.Clear();
-                AudioManager.instance.PlayMusic("Trees", false);
-                AudioManager.instance.PlayMusic("Buildings", true);
-            }
-            else
-            {
-                Buildings.ForEach(t => StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>())));
-                Buildings.Clear();
-                AudioManager.instance.PlayMusic("Buildings", false);
-                AudioManager.instance.PlayMusic("Trees", true);
-                
-                // Une fois que les buildings sont affichés, on change la durée des phases
-                TreeDuration = Random.Range(5.0f, 9.0f);
-                BuildingDuration = Random.Range(3.0f, 5.0f);
-            }
-            
-            // On update la phase
-            TreePhase = !TreePhase;
-            StartPhaseTime = CurrentHour;
+            TogglePhase();
+            CurrentHour += TreeDuration + BuildingDuration;
         }
         
         if (TreePhase)
@@ -132,6 +113,33 @@ public class MinutesController : MonoBehaviour
         Vector3 ZAxis = leftBottom - leftTop;
         
         return leftTop + XAxis * Random.value + ZAxis * Random.value;
+    }
+
+    private void TogglePhase()
+    {
+        // On clear les anciennes listes
+        if (TreePhase)
+        {
+            Trees.ForEach(t => StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>())));
+            Trees.Clear();
+            AudioManager.instance.PlayMusic("Trees", false);
+            AudioManager.instance.PlayMusic("Buildings", true);
+        }
+        else
+        {
+            Buildings.ForEach(t => StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>())));
+            Buildings.Clear();
+            AudioManager.instance.PlayMusic("Buildings", false);
+            AudioManager.instance.PlayMusic("Trees", true);
+                
+            // Une fois que les buildings sont affichés, on change la durée des phases
+            TreeDuration = Random.Range(5.0f, 9.0f);
+            BuildingDuration = Random.Range(3.0f, 5.0f);
+        }
+            
+        // On update la phase
+        TreePhase = !TreePhase;
+        StartPhaseTime = CurrentHour;
     }
 
     private GameObject SpawnTree(Vector3 position)
