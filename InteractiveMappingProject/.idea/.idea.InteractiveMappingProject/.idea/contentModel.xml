@@ -270,6 +270,9 @@
           <e p="package.json" t="Include" />
           <e p="README.txt" t="Include" />
         </e>
+        <e p="Pipeline" t="Include">
+          <e p="Blit.cs" t="Include" />
+        </e>
         <e p="Resources" t="Include">
           <e p="BillingMode.json" t="Include" />
         </e>

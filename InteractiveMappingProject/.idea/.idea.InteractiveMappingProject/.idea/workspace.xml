@@ -22,11 +22,15 @@
     <list default="true" id="cdf3522e-856d-4b58-afaa-8f7780c8bc4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InteractiveMappingProject/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InteractiveMappingProject/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.InteractiveMappingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.InteractiveMappingProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/m_clock.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/m_clock.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/m_sky.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/m_sky.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Meshes/Horloge.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Meshes/Horloge.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Shaders/shad_skybox.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Shaders/shad_skybox.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/Skybox/Cubemap.cubemap" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/Skybox/Cubemap.cubemap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Materials/m_terrain.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Materials/m_terrain.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Textures/postprocess_texture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Textures/postprocess_texture.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pipeline/New Universal Render Pipeline Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pipeline/New Universal Render Pipeline Asset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Pipeline/New Universal Render Pipeline Asset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Pipeline/New Universal Render Pipeline Asset_Renderer.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scn_Art.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scn_Art.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Scn_Art/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Scn_Art/Global Volume Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +45,7 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scritps/GameManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Art/Scritps/TestGradientController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Pipeline/Blit.cs" />
       </list>
     </option>
   </component>
@@ -93,6 +98,9 @@
       <workItem from="1665563427584" duration="1222000" />
       <workItem from="1665661093708" duration="213000" />
       <workItem from="1665661321269" duration="888000" />
+      <workItem from="1665731556568" duration="1000" />
+      <workItem from="1665731767500" duration="31000" />
+      <workItem from="1665732395003" duration="1261000" />
     </task>
     <servers />
   </component>

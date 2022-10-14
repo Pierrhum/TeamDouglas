@@ -57,7 +57,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Value: 14.8
+    - _Value: 36.92
     m_Colors:
     - _AiguilleColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

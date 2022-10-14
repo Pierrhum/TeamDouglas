@@ -64,7 +64,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Blend: 1
-    - _InputVal: 9.24
+    - _InputVal: 14.63
     - _MapStrength: 0.382
     - _NoiseMaskHeight: 2
     - _NoiseSpeed: 0.05
@@ -81,7 +81,7 @@ Material:
     - _Ground: {r: 0, g: 0, b: 0, a: 0}
     - _Horizon: {r: 0, g: 0, b: 0, a: 0}
     - _NightColor: {r: 0.22207977, g: 0.19184762, b: 0.3207547, a: 0}
-    - _SunColor: {r: 0.8679245, g: 0.80268705, b: 0.7074404, a: 0}
+    - _SunColor: {r: 0.8679245, g: 0.81488246, b: 0.7320043, a: 0}
     - _WorldSpaceLightDir: {r: 0, g: 0, b: 0, a: 0}
     - _WorldSpaceLightDir0: {r: 0, g: 0, b: 0, a: 0}
     - _sky: {r: 0, g: 0, b: 0, a: 0}
