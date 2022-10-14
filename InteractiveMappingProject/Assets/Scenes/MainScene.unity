@@ -173,7 +173,7 @@ MonoBehaviour:
   - Name: Buildings
     Value: 0
   - Name: Gravity
-    Value: 0
+    Value: 0.5
   - Name: Trees
     Value: 0
   OverrideAttenuation: 0

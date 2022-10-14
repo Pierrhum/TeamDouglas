@@ -7,11 +7,11 @@ public class SecondsController : MonoBehaviour
 {
     public float CurrentHour;
     private float oldHour;
-    
+
     public Light SunLight;
     public float SunriseHour;
     public float SunsetHour;
-    
+
     private DateTime currentTime;
     private TimeSpan sunriseTime;
     private TimeSpan sunsetTime;
@@ -27,16 +27,19 @@ public class SecondsController : MonoBehaviour
     public int currentDay = 0;
     private bool isNewDay = false;
 
+    //private FMODUnity.StudioEventEmitter clockSound;
+
     private void Awake()
     {
         colorHistory = new List<Color>();
         oldHour = CurrentHour;
+        //clockSound = GetComponent<FMODUnity.StudioEventEmitter>();
     }
 
     private void Start()
     {
         currentTime = DateTime.Now.Date + TimeSpan.FromHours(CurrentHour);
-        
+
         sunriseTime = TimeSpan.FromHours(SunriseHour);
         sunsetTime = TimeSpan.FromHours(SunsetHour);
     }
@@ -44,16 +47,19 @@ public class SecondsController : MonoBehaviour
     private void Update()
     {
         if (TimeDebug)
-            CurrentHour += Time.deltaTime;
-        
-        UpdateController(CurrentHour - oldHour);
-        oldHour = CurrentHour;
+          CurrentHour += Time.deltaTime;
+
+        if (oldHour != CurrentHour){
+          UpdateController(CurrentHour - oldHour);
+          oldHour = CurrentHour;
+          FMODUnity.RuntimeManager.PlayOneShot("event:/Secondes");
+        }
     }
 
     public void UpdateController(float value)
     {
         currentTime = DateTime.Now.Date + TimeSpan.FromHours(CurrentHour += value); // CurrentHour += value
-        
+
         RotateSun( value < 0);
         UpdateLights();
     }
@@ -66,7 +72,7 @@ public class SecondsController : MonoBehaviour
         {
             if(isNewDay)
                 if (clockwise) PreviousDay(); else NextDay();
-            
+
             TimeSpan sunriseToSunsetDuration = CalculateTimeDifference(sunriseTime, sunsetTime);
             TimeSpan timeSinceSunrise = CalculateTimeDifference(sunriseTime, currentTime.TimeOfDay);
 
@@ -90,8 +96,8 @@ public class SecondsController : MonoBehaviour
     {
         float dot = Vector3.Dot(SunLight.transform.forward, Vector3.down);
 
-        SunLight.intensity = Mathf.Lerp(0, maxSunLightIntensity, lightChangeCurve.Evaluate(dot)); 
-        RenderSettings.ambientSkyColor = Color.Lerp(nightAmbientLight, dayAmbientLight, lightChangeCurve.Evaluate(dot)); 
+        SunLight.intensity = Mathf.Lerp(0, maxSunLightIntensity, lightChangeCurve.Evaluate(dot));
+        RenderSettings.ambientSkyColor = Color.Lerp(nightAmbientLight, dayAmbientLight, lightChangeCurve.Evaluate(dot));
     }
 
     private TimeSpan CalculateTimeDifference(TimeSpan fromTime, TimeSpan toTime)
@@ -123,7 +129,7 @@ public class SecondsController : MonoBehaviour
             SunLight.color = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f),Random.Range(0f, 1f));
             colorHistory.Add(SunLight.color);
         }
-        
+
         isNewDay = false;
     }
 
@@ -138,11 +144,11 @@ public class SecondsController : MonoBehaviour
         {
             if(colorHistory.Count > 10)
                 colorHistory.RemoveAt(colorHistory.Count-1);
-            
+
             SunLight.color = new Color(Random.Range(0f, 1f),Random.Range(0f, 1f),Random.Range(0f, 1f));
             colorHistory.Insert(0, SunLight.color);
         }
-        
+
         isNewDay = false;
     }
 }
