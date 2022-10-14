@@ -1000,6 +1000,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: pfb_Controllers
       objectReference: {fileID: 0}
+    - target: {fileID: 2546658416070020625, guid: 7997c0052e713e74891db5db7e5684e7, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 296612496}
     - target: {fileID: 5027554756711148026, guid: 7997c0052e713e74891db5db7e5684e7, type: 3}
       propertyPath: SunLight
       value: 
