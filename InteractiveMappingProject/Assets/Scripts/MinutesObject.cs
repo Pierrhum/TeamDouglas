@@ -44,7 +44,7 @@ public class MinutesObject : MonoBehaviour
                             renderer.material.SetFloat("_DissolveFactor", 1-currentValue);
                         }
                     else if(_Type == Type.GEOMETRY)
-                        GetComponent<Renderer>().material.SetFloat("_DissolveFactor", currentValue);
+                        GetComponent<Renderer>().material.SetFloat("_DissolveFactor", 1-currentValue);
                     currentValue += Time.deltaTime;
                     yield return new WaitForSeconds(Time.deltaTime);
                 }
@@ -61,6 +61,8 @@ public class MinutesObject : MonoBehaviour
                         {
                             renderer.material.SetFloat("_DissolveFactor", 1-currentValue);
                         }
+                    else if(_Type == Type.GEOMETRY)
+                        GetComponent<Renderer>().material.SetFloat("_DissolveFactor", 1-currentValue);
                     
                     currentValue -= Time.deltaTime;
                     yield return new WaitForSeconds(Time.deltaTime);
