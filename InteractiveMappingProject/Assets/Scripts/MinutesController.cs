@@ -40,6 +40,7 @@ public class MinutesController : MonoBehaviour
         StartPhaseTime = CurrentHour;
         while (Geometries.Count < 30)
             Geometries.Add(SpawnGeometry(GetRandomPointInPlane() + Random.Range(2,50) * Vector3.up));
+        AudioManager.instance.PlayMusic("Geometry", true);
     }
 
     // Update is called once per frame
@@ -63,13 +64,21 @@ public class MinutesController : MonoBehaviour
             // On clear les anciennes listes
             if (TreePhase)
             {
-                Trees.ForEach(t => Destroy(t));
+                Trees.ForEach(t => StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>())));
                 Trees.Clear();
+                AudioManager.instance.PlayMusic("Trees", false);
+                AudioManager.instance.PlayMusic("Buildings", true);
             }
             else
             {
-                Buildings.ForEach(t => Destroy(t));
+                Buildings.ForEach(t => StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>())));
                 Buildings.Clear();
+                AudioManager.instance.PlayMusic("Buildings", false);
+                AudioManager.instance.PlayMusic("Trees", true);
+                
+                // Une fois que les buildings sont affichés, on change la durée des phases
+                TreeDuration = Random.Range(5.0f, 9.0f);
+                BuildingDuration = Random.Range(3.0f, 5.0f);
             }
             
             // On update la phase

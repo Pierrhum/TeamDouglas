@@ -15,11 +15,15 @@ public class AudioManager : MonoBehaviour
 
     private FMODUnity.StudioEventEmitter musicEvent;
 
+    public static AudioManager instance;
+
 
     private void Awake()
     {
         musicEvent = GetComponent<FMODUnity.StudioEventEmitter>();
         oldGravityValue = GravityValue;
+
+        instance = this;
     }
 
     void Update()
@@ -33,5 +37,10 @@ public class AudioManager : MonoBehaviour
         musicEvent.SetParameter("Geometry", Geometry ? 1.0f : 0.0f);
         musicEvent.SetParameter("Buildings", Buildings ? 1.0f : 0.0f);
         musicEvent.SetParameter("Trees", Trees ? 1.0f : 0.0f);
+    }
+
+    public void PlayMusic(string name, bool ShouldPlay)
+    {
+        musicEvent.SetParameter(name, ShouldPlay ? 1.0f : 0.0f);
     }
 }
