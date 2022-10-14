@@ -52,7 +52,7 @@ public class SecondsController : MonoBehaviour
         if (oldHour != CurrentHour){
           UpdateController(CurrentHour - oldHour);
           oldHour = CurrentHour;
-          FMODUnity.RuntimeManager.PlayOneShot("event:/Secondes Lumières");
+          FMODUnity.RuntimeManager.PlayOneShot("event:/Secondes");
         }
     }
 
