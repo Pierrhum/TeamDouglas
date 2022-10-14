@@ -7,6 +7,8 @@ public class HoursController : MonoBehaviour
 {
     [SerializeField]
     private Material terrainMaterial;
+    [SerializeField]
+    private AudioManager audioManager;
 
     public List<HoursObject> controlledObjects;
 
@@ -16,7 +18,7 @@ public class HoursController : MonoBehaviour
 
     private void Update() {
         bufferSFX = Mathf.Lerp(bufferSFX, 0f, 0.2f);
-
+        audioManager.GravityValue = bufferSFX;
     }
 
     public void OnEncoderRotate(bool clockwise, float value){
@@ -30,6 +32,8 @@ public class HoursController : MonoBehaviour
             }
         }
         
+        bufferSFX = Mathf.Max(bufferSFX + Mathf.Abs(value) * 0.5f, 0f);
+
         offset += value;
         terrainOffset = Mathf.Sin(offset);
         terrainMaterial.SetFloat("Vector1_a171f6ff504e4aa592e9dabd4d1bac94", terrainOffset);
