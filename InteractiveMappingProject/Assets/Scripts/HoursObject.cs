@@ -14,17 +14,20 @@ public class HoursObject : MonoBehaviour
     private Rigidbody body;
 
     private Vector3 startPosition;
-    private Vector3 targetPosition;
+    private Vector3 startAngularVelocity;
 
     private float floatHeight = 0f;
-    private int state = 0;
-    private float stateProgress = 0f;
+    private float progress = 0f;
+    private float targetProgress = 0f;
+    private float sinProgress = 0f;
+
+    private bool started = false;
     
     private void Awake() {
         Vector3 pos = transform.position;
         Quaternion rot = meltPrefab.transform.rotation;
 
-        pos.y = 0;
+        pos.y = 0.1f;
 
         deformer = Instantiate(meltPrefab, pos, rot);
         deformable = gameObject.AddComponent<Deformable>();
@@ -33,58 +36,37 @@ public class HoursObject : MonoBehaviour
         controller = FindObjectOfType<HoursController>();
         controller.controlledObjects.Add(this);
 
-        floatHeight = Random.Range(2f, 5f);
+        floatHeight = Random.Range(2f, 10f);
         startPosition = transform.position;
+        startAngularVelocity = Random.onUnitSphere;
 
         body = GetComponent<Rigidbody>();
         body.useGravity = false;
     }
 
     private void Update() {
-        transform.position = Vector3.Lerp(transform.position, targetPosition, stateProgress);
+        progress = Mathf.Lerp(progress, targetProgress, 0.2f);
+        sinProgress = Mathf.Sin(progress);
+
+        transform.position = startPosition + Vector3.up * floatHeight * sinProgress;
+        body.angularVelocity = startAngularVelocity * Mathf.Max(sinProgress, 0f);
+        deformer.Factor = Mathf.Max(1f - sinProgress * 10f, 0f);
+
+        if (sinProgress < -0.5f) {
+            Destroy(gameObject);
+        }
     }
 
     public void UpdateObject(float value) {
-        stateProgress += value;
-        if (stateProgress > 1f) {
-            state += 1;
-            stateProgress = 0f;
-        } 
-        if (stateProgress < 0f) {
-            state -= 1;
-            stateProgress = 1f;
+        if (!started) {
+            if (value < 0) {
+                progress = Mathf.PI;
+                targetProgress = progress;
+            }
+            started = true;
         }
-
-        Debug.Log(stateProgress);
-
-        switch (state)
-        {
-            case -1:
-                targetPosition = startPosition;
-                targetPosition.y = 0;
-                body.angularVelocity *= 0.5f;
-
-                deformer.Factor = stateProgress * 2f;
-                break;
-
-            case 0:
-                targetPosition = startPosition + Vector3.up * floatHeight;
-                body.angularVelocity = Random.onUnitSphere * stateProgress * 2f;
-                break;
-
-            case 1:
-                targetPosition = startPosition;
-                targetPosition.y = 0;
-                body.angularVelocity *= 0.5f;
-
-                deformer.Factor = stateProgress * 2f;
-                break;
-
-            default:
-                Destroy(gameObject);
-                break;
-
-        }
+        targetProgress += value;
+        
     }
 
     private void OnDestroy() {
