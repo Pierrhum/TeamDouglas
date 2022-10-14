@@ -11,12 +11,14 @@ public class MinutesController : MonoBehaviour
     private DateTime currentTime;
 
     public GameObject SpawnerPlane;
-    public GameObject TreePrefab;
-    public GameObject BuildingPrefab;
+    public List<GameObject> TreePrefabs;
+    public List<GameObject> BuildingPrefabs;
+    public List<GameObject> GeometryPrefabs;
     
     private bool TreePhase = true;
-    public List<GameObject> Trees;
+    private List<GameObject> Trees;
     private List<GameObject> Buildings;
+    private List<GameObject> Geometries;
 
     public float TreeDuration;
     public float BuildingDuration;
@@ -26,6 +28,7 @@ public class MinutesController : MonoBehaviour
     {
         Trees = new List<GameObject>();
         Buildings = new List<GameObject>();
+        Geometries = new List<GameObject>();
         oldHour = CurrentHour;
     }
 
@@ -35,6 +38,8 @@ public class MinutesController : MonoBehaviour
         TreeDuration = Random.Range(5.0f, 9.0f);
         BuildingDuration = Random.Range(3.0f, 5.0f);
         StartPhaseTime = CurrentHour;
+        while (Geometries.Count < 30)
+            Geometries.Add(SpawnGeometry(GetRandomPointInPlane() + Random.Range(2,50) * Vector3.up));
     }
 
     // Update is called once per frame
@@ -93,6 +98,15 @@ public class MinutesController : MonoBehaviour
             });
             Buildings.RemoveAll(t => t.GetComponent<MinutesObject>().ShouldDestroy(CurrentHour));
         }
+
+        if (Geometries.Count < 30)
+            Geometries.Add(SpawnGeometry(GetRandomPointInPlane() + Random.Range(2,50) * Vector3.up));
+        // Remove Destroyed objects
+        Geometries.ForEach(t => {
+            if (t.GetComponent<MinutesObject>().ShouldDestroy(CurrentHour))
+                StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>()));
+        });
+        Geometries.RemoveAll(t => t.GetComponent<MinutesObject>().ShouldDestroy(CurrentHour));
     }
 
     private Vector3 GetRandomPointInPlane()
@@ -111,20 +125,30 @@ public class MinutesController : MonoBehaviour
 
     private GameObject SpawnTree(Vector3 position)
     {
-        GameObject go = Instantiate(TreePrefab, position, Quaternion.Euler(-90,0,0));
+        GameObject go = Instantiate(TreePrefabs[Random.Range(0,TreePrefabs.Count-1)], position, Quaternion.Euler(-90,Random.Range(0,360),0));
         
         MinutesObject mobj = go.AddComponent<MinutesObject>();
-        mobj.Setup(CurrentHour, Random.Range(1.0f,3.0f));
+        mobj.Setup(CurrentHour, Random.Range(1.0f,3.0f), Type.TREE);
 
         return go;
     }
 
     private GameObject SpawnBuilding(Vector3 position)
     {
-        GameObject go = Instantiate(BuildingPrefab, position, Quaternion.Euler(0,0,0));
+        GameObject go = Instantiate(BuildingPrefabs[Random.Range(0,BuildingPrefabs.Count-1)], position, Quaternion.Euler(0,Random.Range(0,360),0));
         
         MinutesObject mobj = go.AddComponent<MinutesObject>();
-        mobj.Setup(CurrentHour, Random.Range(1.0f,3.0f));
+        mobj.Setup(CurrentHour, Random.Range(1.0f,3.0f), Type.BUILDING);
+
+        return go;
+    }
+    
+    private GameObject SpawnGeometry(Vector3 position)
+    {
+        GameObject go = Instantiate(GeometryPrefabs[Random.Range(0,GeometryPrefabs.Count-1)], position, Quaternion.Euler(Random.Range(0,360),Random.Range(0,360),Random.Range(0,360)));
+        
+        MinutesObject mobj = go.AddComponent<MinutesObject>();
+        mobj.Setup(CurrentHour, Random.Range(1.0f,3.0f), Type.GEOMETRY);
 
         return go;
     }
