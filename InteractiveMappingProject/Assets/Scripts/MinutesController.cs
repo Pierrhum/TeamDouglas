@@ -78,7 +78,7 @@ public class MinutesController : MonoBehaviour
             // Remove Destroyed objects
             Trees.ForEach(t => {
                 if (t.GetComponent<MinutesObject>().ShouldDestroy(CurrentHour))
-                    Destroy(t);
+                    StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>()));
             });
             Trees.RemoveAll(t => t.GetComponent<MinutesObject>().ShouldDestroy(CurrentHour));
         }
@@ -89,7 +89,7 @@ public class MinutesController : MonoBehaviour
             // Remove Destroyed objects
             Buildings.ForEach(t => {
                 if (t.GetComponent<MinutesObject>().ShouldDestroy(CurrentHour))
-                    Destroy(t);
+                    StartCoroutine(DestroyGameObject(t.GetComponent<MinutesObject>()));
             });
             Buildings.RemoveAll(t => t.GetComponent<MinutesObject>().ShouldDestroy(CurrentHour));
         }
@@ -127,5 +127,12 @@ public class MinutesController : MonoBehaviour
         mobj.Setup(CurrentHour, Random.Range(1.0f,3.0f));
 
         return go;
+    }
+
+    private IEnumerator DestroyGameObject(MinutesObject obj)
+    {
+        yield return StartCoroutine(obj.FadeMaterial(false));
+        Destroy(obj.gameObject);
+        yield return null;
     }
 }
